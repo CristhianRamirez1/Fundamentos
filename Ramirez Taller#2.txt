@@ -1,0 +1,304 @@
+Materia : Programacion
+Nivel :3Semestre
+
+EJERCICIO #1
+public class Rectangulo {
+
+ 
+     private double ancho;
+     private double altura;
+     
+
+    public Rectangulo() {
+        this.ancho = 1.00d;
+        this.altura = 1.00d;
+    }
+
+    public Rectangulo(double ancho, double altura) {
+        this.ancho = ancho;
+        this.altura = altura;
+    }
+    
+    public double getArea(){
+        return ancho * altura;
+    }
+    
+     public double getPerimetro(){
+        return (ancho + altura) * 2;
+    }
+    
+    public static void main(String [] args){
+        Rectangulo recta = new Rectangulo(4.00d,40.00d);
+        System.out.println("EL AREA DE UN RECTANGULO ES: "+recta.getArea());
+        System.out.println("EL PERIMETRO DE UN RECTANGULO ES: "+recta.getPerimetro());
+        System.out.println();
+        Rectangulo recta1 = new Rectangulo(3.5d,35.9d);
+       System.out.println("EL AREA DE UN RECTANGULO ES: "+recta1.getArea());
+        System.out.println("EL PERIMETRO DE UN RECTANGULO ES: "+recta1.getPerimetro());
+    }
+}
+
+
+EJERCICIO #2
+public class Cuenta {
+    
+    private int id;
+    private double saldo;
+    private double interes_anual;
+    private Date fecha;
+
+   
+    public Cuenta() {
+        this.id = 0;
+        this.saldo = 0;
+        this.interes_anual = 0;
+    }
+
+    public Cuenta(int id, double saldo) {
+        this.id = id;
+        this.saldo = saldo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getInteres_anual(double interes_anual) {
+        return interes_anual /100;
+    }
+
+    public void setInteres_anual(double interes_anual) {
+        this.interes_anual = interes_anual;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    public double getInteres_mensual (){
+        return saldo*0.045;
+    }
+    
+    public double retiro(double retiro){
+        return saldo = saldo - retiro;
+    }
+    
+    public double deposito(double deposito){
+        return saldo = saldo + deposito;
+    }
+    
+    public static void main (String[]args){
+        Cuenta ct = new Cuenta(1122,20.000);
+        System.out.println("EL INTERES ANUAL ES:"+ct.getInteres_anual(4.5));
+        System.out.println("EL RETIRO ES: "+ct.retiro(2.500));
+        System.out.println("EL DEPOSITO ES: "+ct.deposito(3.000));
+        System.out.println("EL INTERES MENSUAL ES: "+ct.getInteres_mensual());
+        System.out.println("LA FECHA DE CREACION ES: "+ct.fecha);
+        
+    }
+}
+
+EJERCICIOS#3
+
+public class Triangulo extends ObjetoGeometrico {
+    double lado1;
+    double lado2;
+    double lado3;
+
+    public Triangulo() {
+        this.lado1 = 1.0d;
+        this.lado2 = 1.0d;
+        this.lado3 = 1.0d;
+    }
+
+    public Triangulo(double lado1, double lado2, double lado3) {
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.lado3 = lado3;
+    }
+
+    public double getLado1() {
+        return lado1;
+    }
+
+    public void setLado1(double lado1) {
+        this.lado1 = lado1;
+    }
+
+    public double getLado2() {
+        return lado2;
+    }
+
+    public void setLado2(double lado2) {
+        this.lado2 = lado2;
+    }
+
+    public double getLado3() {
+        return lado3;
+    }
+
+    public void setLado3(double lado3) {
+        this.lado3 = lado3;
+    }
+    
+    public double getArea(){
+        return (ancho * altura) / 2;
+    }
+    
+    public double getPerimetro(){
+        return lado1 + lado2 + lado3;
+    }
+    
+    public static void main (String [] args){
+        Triangulo tri = new Triangulo(1,1.5,1);
+        System.out.println("EL AREA DE UN TRIANGULO ES: "+tri.getArea());
+        System.out.println("EL PERIMETRO DE UN TRIANGULO ES: "+tri.getPerimetro());
+    }
+}
+
+public class ObjetoGeometrico {
+    double ancho;
+    double altura;
+
+    public ObjetoGeometrico() {
+        this.ancho = 1.0d;
+        this.altura = 1.0d;
+    }
+    
+    public ObjetoGeometrico(double ancho, double altura) {
+        this.ancho = ancho;
+        this.altura = altura;
+    }
+}
+
+
+EJERCCIOS#4
+
+public class Persona {
+    String nombre;
+    String direccion;
+    String telefono;
+    String email;
+
+    public Persona() {
+        this.nombre = "";
+        this.direccion = "";
+        this.telefono = "";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
+}
+
+
+public class Profesor extends Empleado{
+    
+}
+
+
+public class Personal extends Empleado{
+    
+}
+
+public class Empleado extends Persona {
+    float salario;
+    Date fecha_ent;
+
+    public Empleado() {
+        this.salario = salario;
+        this.fecha_ent = fecha_ent;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public Date getFecha_ent() {
+        return fecha_ent;
+    }
+
+    public void setFecha_ent(Date fecha_ent) {
+        this.fecha_ent = fecha_ent;
+    }
+    
+
+
+public class Estudiante extends Persona{
+        
+    Scanner leer = new Scanner(System.in);
+    String status;
+    
+    public Estudiante() {
+        this.status = "";
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    void status(){
+        System.out.println("INGRESE EL CURSO DEL ESTUDIANTE: ");
+        status = leer.next();
+    }
+}
+
+    
+}
+
+
+
